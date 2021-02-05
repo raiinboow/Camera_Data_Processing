@@ -1,0 +1,19 @@
+%YAML:1.0
+---
+abs_init_x: 0                      #To the right of the driving direction (m)
+abs_init_y: 0.78               # Vertical to ground plane (m)
+abs_init_z: 0                       # Opposite of the driving direction (m)
+
+R: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: f
+   data: [ 0., 0., 1., 1., 0., 0., 0., 1., 0. ]
+T: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: f
+   data: [ 0.45999995e-01, 0.69000001e-01, 0.79000003e-01 ]
+  #  data: [ 3.45999995e-01, 1.69000001e-01, 5.79000003e-01 ]
+
+  

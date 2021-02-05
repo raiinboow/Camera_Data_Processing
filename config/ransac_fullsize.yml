@@ -1,0 +1,100 @@
+%YAML:1.0
+---
+###Mono###
+IS_MONO: 1
+
+###Control###
+FILTER_GROUND: 1
+FILTER_BACKGROUND: 1
+FILTER_LANE: 0
+
+###Disparity###
+#  0 - SGBM, 1- BM, 2 - ELAS
+
+#---SGBM---
+DISPARITY_TYPE: 0
+pre_gaussian_kernel: 3
+pre_median_kernel: 1
+max_disparity: 64
+window_size: 3
+prefilter_size: 63
+prefilter_cap: 63
+texture_threshold: 10
+uniqueness_ratio: 10
+wls_lambda: 5000
+wls_sigma: 1
+
+#---BM---
+# DISPARITY_TYPE: 1
+# pre_gaussian_kernel: 11 #5
+# pre_median_kernel: 7 #3
+# max_disparity: 64 #128
+# window_size: 9 #11
+# prefilter_size: 45 #31
+# prefilter_cap: 45 #31
+# texture_threshold: 10 #10
+# uniqueness_ratio: 20 #10
+# speckle_window: 400 #400
+# speckle_range: 32 #32
+
+#---ELAS---
+# DISPARITY_TYPE: 2
+# pre_gaussian_kernel: 5 #5
+# pre_median_kernel: 3 #3
+# max_disparity: 64 #128
+
+###GroundFIlter###
+# 0 - Mono, 1 - Online
+GROUND_FILTER_TYPE: 1
+#---Mono---
+# is_stable: 0
+# ground_tolerance: 5
+#---Online---
+ONLINE_GROUND_FILTER_TYPE: 1    # 0 - Hough, 1 - RANSAC
+ground_tolerance: 5
+min_count: 40
+max_disparity: 255
+min_disparity: 5
+#-------Hough------
+hough_min_count: 25
+hough_min_length: 100
+hough_max_gap: 30
+#-------RANSAC------
+NUM_OF_RANSAC_FILTERING: 5    # Iterations of RANSAC ground filtering
+num_samples: 3
+distance_threshold: 10
+start_row: 150
+start_column: 200
+max_iteration: 20
+num_median_filter: 5
+
+###ObjectFilter###
+#---Size---
+min_width: 0.3
+min_height: 0.3
+max_width: 1
+max_height: 1
+#---NMS---
+NMS_threshold: 0.3
+#---Confidence---
+confidence_threshold: 0.5
+
+###ContourDetector###
+# 0 - Contour, 1 - UVdisparity
+DETECTOR_TYPE: 0
+#---lane---
+#min_depth: 0.1
+#depth_step: 0.1
+#num_of_waypoints: 10
+#---Contour---
+DISPARITY_CALC_TYPE: 0            # 0-median, 1-average, 2-max
+od_pre_median_kernel: 11
+# median_kernel: 5
+canny_threshold: 100
+#---UVDisparity---
+uvd_min_count: 0
+
+
+
+
+

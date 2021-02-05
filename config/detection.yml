@@ -1,0 +1,16 @@
+%YAML:1.0
+---
+detection_algorithm: 0
+#Filter ground
+filter_ground: 1                    #bool, 0-false, 1-true
+filter_background: 1
+ground_tolerance: 0
+#Contour
+median_kernel: 5
+min_area_pixel: 200
+min_height_pixel: 15
+min_width_pixel: 15
+disparity_mode: 1
+nms_threshold: 0.8
+filter_from_lane: true
+confidence_threshold: 0.1

@@ -1,0 +1,85 @@
+%YAML:1.0
+---
+###Mono###
+IS_MONO: 1
+
+###Control###
+FILTER_GROUND: 1
+FILTER_BACKGROUND: 1
+FILTER_LANE: 1
+
+###Disparity###
+#---SGBM---
+# DISPARITY_TYPE: 0
+# pre_gaussian_kernel: 5
+# pre_median_kernel: 5
+# max_disparity: 64
+# window_size: 3
+# prefilter_size: 63
+# prefilter_cap: 63
+# texture_threshold: 10
+# uniqueness_ratio: 10
+# wls_lambda: 8000
+# wls_sigma: 0.8
+#---BM---
+DISPARITY_TYPE: 1
+pre_gaussian_kernel: 5
+pre_median_kernel: 3
+max_disparity: 64
+window_size: 5 #11
+prefilter_size: 31
+prefilter_cap: 31
+texture_threshold: 5
+uniqueness_ratio: 5 #10
+speckle_window: 400 #50
+speckle_range: 32 #100
+
+###GroundFIlter###
+GROUND_FILTER_TYPE: 1
+#---Mono---
+# is_stable: 0
+# ground_tolerance: 5
+#---Online---
+ONLINE_GROUND_FILTER_TYPE: 1
+ground_tolerance: 0
+min_count: 5
+max_disparity: 255
+min_disparity: 1
+#-------Hough------
+hough_min_count: 25
+hough_min_length: 100
+hough_max_gap: 30
+#-------RANSAC------
+NUM_OF_RANSAC_FILTERING: 1
+num_samples: 2
+distance_threshold: 3
+start_row: 0
+max_iteration: 10
+
+###ObjectFilter###
+#---Size---
+min_width: 0.1
+min_height: 0.1
+max_width: 1
+max_height: 1
+#---NMS---
+NMS_threshold: 0.1
+#---Confidence---
+confidence_threshold: 0.4
+
+###ContourDetector###
+DETECTOR_TYPE: 0
+#---lane---
+#min_depth: 0.1
+#depth_step: 0.1
+#num_of_waypoints: 10
+#---Detection---
+DISPARITY_CALC_TYPE: 0            # 0-median, 1-average, 2-max
+od_pre_median_kernel: 15
+median_kernel: 5
+canny_threshold: 100
+
+
+
+
+

@@ -1,0 +1,34 @@
+%YAML:1.0
+---
+### Source ###
+READ_FROM_FILE: 1
+# PATH_FILE: "../recordings/20201210_16-09-57_raw.bag"
+# PATH_FILE: "../recordings/20201211_14-29-56_raw.bag"
+# PATH_FILE: "../recordings/20201214_15-18-35_raw.bag"          # dog
+PATH_FILE: "../recordings/20201214_15-17-47_raw.bag"      # bumper
+# PATH_FILE: "../recordings/20201215_11-36-28_raw.bag"      # desk
+
+SAMPLE_RATE: 1
+
+### Control ###
+RECORD: 1
+RUN_ALGORITHM: 1
+
+### Record ###
+SAVE_BAG: 1
+SAVE_VIDEO: 1
+PATH_RECORD: "../recordings/"
+
+### Algorithm ###
+IS_MONO: 0
+MONO_DETECTION: 0
+PATH_STEREO_CALIBRATION: "../config/t265_fullsize.yml"
+PATH_DETECTION_CONFIG: "../config/ransac_fullsize.yml"
+
+# PATH_DETECTION_CONFIG: "../config/ransac_fullsize_desk.yml"
+# PATH_STEREO_CALIBRATION: "../config/t265_halfsize.yml"
+# PATH_DETECTION_CONFIG: "../config/ransac_halfsize.yml"
+PATH_LANE: "../config/lane.yml"
+PATH_VISUAL: "../config/visual.yml"
+PATH_MONTAGE: "../config/montage.yml"
+

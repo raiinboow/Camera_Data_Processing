@@ -1,0 +1,7 @@
+%YAML:1.0
+---
+width: 1                        # width of lane
+min_depth: 0.2          # minimum distance to be detected
+depth_step: 0.5            # depth step of lane
+num_of_waypoints: 6                       # number of way points/sections, depth = depth_step * num_of_wp
+max_pos_from_ground: 1
